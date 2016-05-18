@@ -51,7 +51,7 @@ Case_Not_Between(nStart, nEnd):    // sv not between nStart and nEnd
 Case_In(v1, ...):                  /* sv in (v1, v2, v3, v4, ...)
                                    Require varadic templates feature. */
 Case_Not_In(v1, ...):              /* sv not in (v1, v2, v3, v4, ...)
-                                   Require varadic templates feature*/
+                                   Require varadic templates feature */
 
 Case_InNCmp(argc, v1, ...):        // sv in (v1, v2, v3, v4, vargc...)
 Case_Not_InNCmp(argc, v1, ...):    // sv not in (v1, v2, v3, v4, vargc...)
@@ -97,7 +97,7 @@ void testcase1()
 	break;
 	Default:
 		cout << "Important: For the performance, "
-			<< "Switch statement is not suppote string pointer of the rvalue instance."
+			<< "Switch statement is not support string pointer of the rvalue instance."
 			<< endl;
 		break;
 	} End_Switch
