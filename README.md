@@ -3,21 +3,21 @@ sswitch for C++, Single Value Multiple Compare for C++
 
 ## Installing
 * nuget.org : cppsswitch
-* Clone or download > download ZIP
+* github.com : Clone or download > download ZIP
 
 ## Tested compilers
 
 * clang++ 3.6.0 (c++, c++98, c++0x, c++11, c++14, c++1z)
 * g++ 4.9.2 (c++, c++98, c++0x, c++11, c++14)
-* Visual Studio 2010, 2015
+* Visual Studio 2010(v100), 2015(v140)
 * Clang 3.7 with Microsoft CodeGen (v140_clang_3_7)
 
 ## Reserved keywords
 
 **Description**
 
-* sv: SwitchValue
-* v : Variable    (string, wstring, int, long long, float, double, ...)
+* sv: SwitchValue (string, wstring, int, long long, float, double)
+* v : Variable    (string, wstring, int, long long, float, double)
 * i : Interger    (int, long long)
 * n : Number    (int, long long, float, double)
 * b : Boolean    (bool)
@@ -48,9 +48,9 @@ Case_Between(nStart, nEnd):        // sv between nStart and nEnd
 Case_Not_Between(nStart, nEnd):    // sv not between nStart and nEnd
 
 Case_In(v1, ...):                  /* sv in (v1, v2, v3, v4, ...)
-                                   Require varadic templates feature of C++11. */
+                                   Require varadic templates feature. */
 Case_Not_In(v1, ...):              /* sv not in (v1, v2, v3, v4, ...)
-                                   Require varadic templates feature of C++11. */
+                                   Require varadic templates feature*/
 
 Case_InNCmp(argc, v1, ...):        // sv in (v1, v2, v3, v4, vargc...)
 Case_Not_InNCmp(argc, v1, ...):    // sv not in (v1, v2, v3, v4, vargc...)
@@ -76,10 +76,10 @@ Case_Not_Empty:  // sv is not empty string
 #include <iostream>
 #include <stdio.h>
 #include "sswitch.h"
-#include "svmcmp.h"
-#include "slvb.h"
+#include "svmcmp.h"   // Single Value Multiple Compare
+#include "slvb.h"     // Statements Like Visual Basic(useless)
 #if defined(__GXX_EXPERIMENTAL_CXX0X__) || _MSC_VER >= 1600
-#include "sops.h"
+#include "sops.h"     // Simple Operators(more useless)
 #endif
 
 using namespace std;
