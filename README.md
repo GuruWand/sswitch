@@ -3,7 +3,7 @@
 * Single Value Multiple Compare for C++
 
 ## Installing
-* nuget.org : cppsswitch
+* nuget.org : PM> Install-Package cppsswitch
 * github.com : Clone or download > download ZIP
 
 ## Tested compilers
@@ -96,7 +96,7 @@ void testcase1()
 		cout << "Error!" << endl;
 	break;
 	Default:
-		cout << "Important: For the performance"
+		cout << "Important: For the performance, "
 			<< "Switch statement is not suppote string pointer of the rvalue instance."
 			<< endl;
 		break;
