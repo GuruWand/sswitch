@@ -22,31 +22,31 @@ expr: Expression
 
 ```C++
 Switch(sv) {
-Case(v):			// sv equal v
+Case(v):				// sv equal v
 Case_Not(v):			// sv not equal v
 Case_Greater(n):		// sv > n
-Case_GreaterEqual(n):		// sv >= n
+Case_GreaterEqual(n):	// sv >= n
 Case_Less(n):			// sv < n
 Case_LessEqual(n):		// sv <= n
 
-Case_GT(n):			// Alias of Case_Greater(n)
-Case_GE(n):			// Alias of Case_GreaterEqual(n)
-Case_LT(n):			// Alias of Case_Less(n)
-Case_LE(n):			// Alias of Case_LessEqual(n)
+Case_GT(n):				// Alias of Case_Greater(n)
+Case_GE(n):				// Alias of Case_GreaterEqual(n)
+Case_LT(n):				// Alias of Case_Less(n)
+Case_LE(n):				// Alias of Case_LessEqual(n)
 
 Case_BitOr(i):			// sv | i
 Case_BitAnd(i):			// sv & i
 
-Case_Or(b):			// sv || b
+Case_Or(b):				// sv || b
 Case_And(b):			// sv && b
 
 Case_Between(nStart, nEnd):	// sv between nStart and nEnd
 Case_Not_Between(nStart, nEnd):	// sv not between nStart and nEnd
 
 Case_In(v1, ...):		/* sv in (v1, v2, v3, v4, ...)
-				Require varadic templates feature of C++11. */
-Case_Not_In(v1, ...):		/* sv not in (v1, v2, v3, v4, ...)
-				Require varadic templates feature of C++11. */
+						Require varadic templates feature of C++11. */
+Case_Not_In(v1, ...):	/* sv not in (v1, v2, v3, v4, ...)
+						Require varadic templates feature of C++11. */
 
 Case_InNCmp(argc, v1, ...):	// sv in (v1, v2, v3, v4, vargc...)
 Case_Not_InNCmp(argc, v1, ...):	// sv not in (v1, v2, v3, v4, vargc...)
@@ -54,13 +54,13 @@ Case_Not_InNCmp(argc, v1, ...):	// sv not in (v1, v2, v3, v4, vargc...)
 
 Case_Expr(expr):		// expr	(Execute when expression result into True)
 
-Case_Else:			// true	(Execute when all the above Case statements result into False)
-Default:			/* Notice: "default:" is not available in the "Switch" statement.
-				(Execute when all the Case statements result into False) */
+Case_Else:				// true	(Execute when all the above Case statements result into False)
+Default:				/* Notice: "default:" is not available in the "Switch" statement.
+					(Execute when all the Case statements result into False) */
 
-Case_Null:			// sv is null string pointer (char *, wchar_t *)
+Case_Null:				// sv is null string pointer (char *, wchar_t *)
 Case_Not_Null:			// sv is not null string pointer
-Case_Empty:			// sv is empty string ("", L"")
+Case_Empty:				// sv is empty string ("", L"")
 Case_Not_Empty:			// sv is not empty string
 } End_SwitchC			// If you use this keyword, you can use the "continue" in the "Switch" statement.
 // or
