@@ -77,7 +77,7 @@ Case("test"):
     break;
 Default:
     cout "Important: For the performance"
-    << "Switch statement is not suppoted string pointer of the rvalue instance." << endl;
+    << "Switch statement is not suppote string pointer of the rvalue instance." << endl;
     break;
 } End_Switch
 
