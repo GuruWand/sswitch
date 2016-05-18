@@ -291,8 +291,8 @@ case __COUNTER__ + 1:\
 #undef static_assert
 #define static_assert assert(msg && expr)
 #endif
-# define Case_In(v, ...)		static_assert(0, "Require varadic templates feature."); case __COUNTER__
-# define Case_Not_In(v, ...)	static_assert(0, "Require varadic templates feature."); case __COUNTER__
+# define Case_In(v, ...)		static_assert(0, "Require variadic templates feature."); case __COUNTER__
+# define Case_Not_In(v, ...)	static_assert(0, "Require variadic templates feature."); case __COUNTER__
 #pragma pop_macro("static_assert")
 #endif // !__cpp_variadic_templates
 # define Case_InNCmp(argc, v, ...) \
