@@ -1,5 +1,6 @@
 # sswitch
-sswitch for C++, Single Value Multiple Compare for C++
+* sswitch for C++
+* Single Value Multiple Compare for C++
 
 ## Installing
 * nuget.org : cppsswitch
