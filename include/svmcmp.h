@@ -153,7 +153,7 @@ mLastOp = OP_UNKNOWN;mNotOp = false;return *this
 	template <typename T1>
 	inline __ISVOps_& In(T1 v, ...)
 	{
-		static_assert(0, "Require varadic templates feature.");
+		static_assert(0, "Require variadic templates feature.");
 		return *this;
 	}
 #endif // !__cpp_variadic_templates
