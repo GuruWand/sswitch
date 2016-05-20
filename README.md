@@ -34,10 +34,10 @@ Case_GreaterEqual(n):              // sv >= n
 Case_Less(n):                      // sv < n
 Case_LessEqual(n):                 // sv <= n
 
-Case_GT(n):                        // Alias of Case_Greater(n)
-Case_GE(n):                        // Alias of Case_GreaterEqual(n)
-Case_LT(n):                        // Alias of Case_Less(n)
-Case_LE(n):                        // Alias of Case_LessEqual(n)
+Case_GT(n):                        // Alias of Case_Greater
+Case_GE(n):                        // Alias of Case_GreaterEqual
+Case_LT(n):                        // Alias of Case_Less
+Case_LE(n):                        // Alias of Case_LessEqual
 
 Case_BitOr(i):                     // sv | i
 Case_BitAnd(i):                    // sv & i
