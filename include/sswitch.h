@@ -71,12 +71,6 @@ guruwand at gmail dot com
 # define DEPRECATED(msg)			__attribute__((deprecated(msg)))
 #endif // !_MSC_VER
 
-#ifndef __cpp_variadic_templates
-#if (_MSC_VER >= 1800)
-# define __cpp_variadic_templates	200704
-#endif
-#endif // !__cpp_variadic_templates
-
 class __SSCmp_
 {
 private:
@@ -206,7 +200,7 @@ return b
 	}
 #pragma pop_macro("BETWEEN")
 
-#if defined(__cpp_variadic_templates)
+#if defined(__cpp_variadic_templates) || defined(_HAS_VARIADIC_TEMPLATES)
 	template <typename T1, typename... Args>
 	inline bool In(const T1 v, const Args&... args) const {
 		return Equal(v) || In(args...);
@@ -281,9 +275,9 @@ case __COUNTER__ + 1:\
 # define Case_Between(s, e)		Case_Expr(SwitchValue.Between(s, e))
 # define Case_Not_Between(s, e)	Case_Expr(!SwitchValue.Between(s, e))
 
-#ifdef __cpp_variadic_templates
-# define Case_In(v, ...)		Case_Expr(SwitchValue.In(v, __VA_ARGS__))
-# define Case_Not_In(v, ...)	Case_Expr(!SwitchValue.In(v, __VA_ARGS__))
+#if defined(__cpp_variadic_templates) || defined(_HAS_VARIADIC_TEMPLATES)
+# define Case_In(...)			Case_Expr(SwitchValue.In(__VA_ARGS__))
+# define Case_Not_In(...)		Case_Expr(!SwitchValue.In(__VA_ARGS__))
 #else // !__cpp_variadic_templates
 
 #if !defined(__GXX_EXPERIMENTAL_CXX0X__) && _MSC_VER < 1600
@@ -291,14 +285,13 @@ case __COUNTER__ + 1:\
 #undef static_assert
 #define static_assert assert(msg && expr)
 #endif
-# define Case_In(v, ...)		static_assert(0, "Require variadic templates feature."); case __COUNTER__
-# define Case_Not_In(v, ...)	static_assert(0, "Require variadic templates feature."); case __COUNTER__
+# define Case_In(...)			static_assert(0, "Require variadic templates feature."); case __COUNTER__
+# define Case_Not_In(...)		static_assert(0, "Require variadic templates feature."); case __COUNTER__
 #pragma pop_macro("static_assert")
 #endif // !__cpp_variadic_templates
-# define Case_InNCmp(argc, v, ...) \
-								Case_Expr(SwitchValue.InNCmp(argc, v, __VA_ARGS__))
-# define Case_Not_InNCmp(argc, v, ...) \
-								Case_Expr(!SwitchValue.InNCmp(argc, v, __VA_ARGS__))
+# define Case_InNCmp(argc, ...) Case_Expr(SwitchValue.InNCmp(argc, __VA_ARGS__))
+# define Case_Not_InNCmp(argc, ...) \
+								Case_Expr(!SwitchValue.InNCmp(argc, __VA_ARGS__))
 
 # define Case_Else				Case_Expr(true)
 # define Case_Null				Case_Expr(SwitchValue.Null())
