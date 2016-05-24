@@ -13,8 +13,6 @@ guruwand at gmail dot com
 #error Require variadic templates feature.
 #endif // !_HAS_VARIADIC_TEMPLATES
 
-#include <tuple>
-
 #pragma push_macro("USE_WCHAR")
 #ifndef USE_WCHAR
 #if defined(_MSC_VER)\
