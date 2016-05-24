@@ -49,8 +49,8 @@ It is freely distributable under the terms of an MIT-style license.
 # define Case_Between_(start, end)
 # define Case_Not_Between_(start, end)
 
-# define Case_In_(v, ...)
-# define Case_Not_In_(v, ...)
+# define Case_In_(v1, ...)
+# define Case_Not_In_(v1, ...)
 # define Case_InNCmp_(argc, v1, ...)
 # define Case_Not_InNCmp)(argc, v1, ...)
 
@@ -87,9 +87,9 @@ It is freely distributable under the terms of an MIT-style license.
 # define Case_Not_Between_(s, e) \
 								Case_Expr_(!SwitchValue.Between(s, e))
 
-#ifdef __cpp_variadic_templates
-# define Case_In_(v, ...)		Case_Expr_(SwitchValue.In(v, __VA_ARGS__))
-# define Case_Not_In_(v, ...)	Case_Expr_(!SwitchValue.In(v, __VA_ARGS__))
+#if defined(__cpp_variadic_templates) || defined(_HAS_VARIADIC_TEMPLATES)
+# define Case_In_(...)			Case_Expr_(SwitchValue.In(__VA_ARGS__))
+# define Case_Not_In_(...)		Case_Expr_(!SwitchValue.In(__VA_ARGS__))
 #else	// !__cpp_variadic_templates
 # define Case_In_(v, ...)		static_assert(0, "Require varadic templates feature of C++11.");
 # define Case_Not_In_(v, ...)	static_assert(0, "Require varadic templates feature of C++11.");
