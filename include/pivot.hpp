@@ -5,8 +5,8 @@ guruwand at gmail dot com
 */
 
 #pragma once
-#ifndef _LVTIE_
-#define _LVTIE_
+#ifndef _PIVOT_
+#define _PIVOT_
 
 #if !defined(__cpp_variadic_templates)\
 	&& !defined(_HAS_VARIADIC_TEMPLATES)
@@ -26,20 +26,20 @@ guruwand at gmail dot com
 #endif
 #endif // USE_WCHAR
 
-#pragma push_macro("_LVTIE_LIST")
-#pragma push_macro("_LVTIE_VECTOR")
-#pragma push_macro("_LVTIE_STRING")
+#pragma push_macro("_PIVOT_LIST")
+#pragma push_macro("_PIVOT_VECTOR")
+#pragma push_macro("_PIVOT_STRING")
 
 #if defined(_GLIBCXX_LIST) || defined(_LIST_)
-#define _LVTIE_LIST
+#define _PIVOT_LIST
 #endif // _GLIBCXX_LIST || _LIST_
 
 #if defined(_GLIBCXX_VECTOR) || defined(_VECTOR_)
-#define _LVTIE_VECTOR
+#define _PIVOT_VECTOR
 #endif // _GLIBCXX_VECTOR || _VECTOR_
 
 #if defined(_GLIBCXX_STRING) || defined(_STRING_)
-#define _LVTIE_STRING
+#define _PIVOT_STRING
 #endif // _GLIBCXX_STRING || _STRING_
 
 namespace pivot {
@@ -91,7 +91,7 @@ struct _Exact_args_t{};
 			return (*this);
 		}
 
-#if defined(_LVTIE_LIST) && defined(_LVTIE_STRING)
+#if defined(_PIVOT_LIST) && defined(_PIVOT_STRING)
 		inline _Myt& operator=(const list<string>& _Right)
 		{
 			assigncstr(_Right);
@@ -104,8 +104,8 @@ struct _Exact_args_t{};
 			return (*this);
 		}
 #endif // USE_WCHAR
-#endif // _LVTIE_LIST && _LVTIE_STRING
-#if defined(_LVTIE_VECTOR) && defined(_LVTIE_STRING)
+#endif // _PIVOT_LIST && _PIVOT_STRING
+#if defined(_PIVOT_VECTOR) && defined(_PIVOT_STRING)
 		inline _Myt& operator=(const vector<string>& _Right)
 		{
 			assigncstr(_Right);
@@ -118,23 +118,23 @@ struct _Exact_args_t{};
 			return (*this);
 		}
 #endif // USE_WCHAR
-#endif // _LVTIE_VECTOR && _LVTIE_STRING
-#if defined(_LVTIE_LIST)
+#endif // _PIVOT_VECTOR && _PIVOT_STRING
+#if defined(_PIVOT_LIST)
 		template <class T> inline
 		_Myt& operator=(const list<T>& _Right)
 		{
 			assign(_Right);
 			return (*this);
 		}
-#endif //_LVTIE_LIST
-#if defined(_LVTIE_VECTOR)
+#endif //_PIVOT_LIST
+#if defined(_PIVOT_VECTOR)
 		template <class T> inline
 		_Myt& operator=(const vector<T>& _Right)
 		{			
 			assign(_Right);
 			return (*this);
 		}
-#endif // _LVTIE_VECTOR
+#endif // _PIVOT_VECTOR
 		constexpr const _Mybase& _Get_rest() const noexcept
 		{
 			return (*this);
@@ -204,7 +204,7 @@ struct _Exact_args_t{};
 	}
 }
 #pragma pop_macro("USE_WCHAR")
-#pragma pop_macro("_LVTIE_STRING")
-#pragma pop_macro("_LVTIE_VECTOR")
-#pragma pop_macro("_LVTIE_LIST")
-#endif // _LVTIE_
+#pragma pop_macro("_PIVOT_STRING")
+#pragma pop_macro("_PIVOT_VECTOR")
+#pragma pop_macro("_PIVOT_LIST")
+#endif // _PIVOT_
