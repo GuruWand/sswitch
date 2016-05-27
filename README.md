@@ -8,8 +8,8 @@
 
 ## Tested compilers
 
-* clang++ 3.6.0 (c++, c++98, c++0x, c++11, c++14, c++1z)
-* g++ 4.9.2 (c++, c++98, c++0x, c++11, c++14)
+* clang++ 3.6.0 (c++, c++98,0x,11,14,1z)
+* g++ 4.9.2 (c++, c++98,0x,11,14)
 * Visual Studio 2010(v100), 2015(v140)
 * Clang 3.7 with Microsoft CodeGen (v140_clang_3_7)
 
