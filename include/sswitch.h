@@ -280,8 +280,8 @@ case __COUNTER__ + 1:\
 # define Case_Not_In(...)		Case_Expr(!SwitchValue.In(__VA_ARGS__))
 #else // !__cpp_variadic_templates
 
-#if !defined(__GXX_EXPERIMENTAL_CXX0X__) && _MSC_VER < 1600
 #pragma push_macro("static_assert")
+#if !defined(__GXX_EXPERIMENTAL_CXX0X__) && _MSC_VER < 1600
 #undef static_assert
 #define static_assert assert(msg && expr)
 #endif
