@@ -2,9 +2,9 @@
 * sswitch for C++
 * Single Value Multiple Compare for C++
 
-## Installing
-* nuget.org : PM> Install-Package cppsswitch
-* github.com : Clone or download > download ZIP
+## Download and install
+* <a href="https://www.nuget.org/packages/cppsswitch/" target="_blank">nuget.org</a> : PM> Install-Package cppsswitch
+* <a href="https://github.com/GuruWand/sswitch" target="_blank">github.com</a> : Clone or download > download ZIP
 
 ## Tested compilers
 
@@ -214,7 +214,7 @@ void testcase1()
 		Case_Not_Between_(1.1, 3.5)
 			a += 800;
 		Case_(string("Age").c_str())
-			End_SelectC // support "continue"
+		End_SelectC // support "continue"
 	}
 	cout << "Result: " << a << endl;
 }
