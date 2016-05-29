@@ -2,7 +2,7 @@
 * sswitch for C++
 * Single Value Multiple Compare for C++
 
-## Download and install
+## Download
 * <a href="https://www.nuget.org/packages/cppsswitch/" target="_blank">nuget.org</a> : PM> Install-Package cppsswitch
 * <a href="https://github.com/GuruWand/sswitch" target="_blank">github.com</a> : Clone or download > download ZIP
 
